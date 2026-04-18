@@ -33,5 +33,13 @@ import { RouterLink, RouterView } from 'vue-router';
     <main>
       <RouterView />
     </main>
+
+    <footer class="bg-[var(--color-text)] w-full">
+      <div
+        class="page-container py-6 font-accent text-center text-sm text-[var(--color-bg-white)]"
+      >
+        &copy; 2024 Olga Pasko. Alle rettigheder forbeholdes.
+      </div>
+    </footer>
   </div>
 </template>
