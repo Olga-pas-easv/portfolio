@@ -3,23 +3,30 @@ import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div class="min-h-screen bg-stone-100 text-neutral-900">
-    <header class="border-b border-black/10">
+  <div class="min-h-screen w-full">
+    <header class="page-container">
       <div
-        class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
+        class="flex justify-between items-center h-full py-4 text-[var(--color-text)]"
       >
-        <RouterLink to="/" class="text-lg font-medium tracking-wide">
-          Olga Pasko
-        </RouterLink>
+        <div class="flex gap-5 items-baseline">
+          <RouterLink to="/" class="font-accent text-xl">
+            Olga Pasko
+          </RouterLink>
+          <p class="label-caps text-[var(--color-text-muted)] font-normal">
+            Multimediedesign
+          </p>
+        </div>
 
-        <nav class="flex gap-6 text-sm text-black/70">
-          <RouterLink to="/" class="hover:text-black">Hjem</RouterLink>
-          <RouterLink to="/om-mig" class="hover:text-black">Om mig</RouterLink>
-          <RouterLink to="/cv" class="hover:text-black">CV</RouterLink>
-          <RouterLink to="/kontakt" class="hover:text-black"
-            >Kontakt</RouterLink
-          >
+        <nav class="flex gap-8 text-xs tracking-widest">
+          <RouterLink to="/" class="nav-link">Hjem</RouterLink>
+          <a href="#projekter" class="nav-link">Projekter</a>
+          <RouterLink to="/om-mig" class="nav-link">Om mig</RouterLink>
+          <RouterLink to="/cv" class="nav-link">CV</RouterLink>
         </nav>
+
+        <div class="btn-header">
+          <RouterLink to="/kontakt" class="text-xs">Kontakt mig</RouterLink>
+        </div>
       </div>
     </header>
 
