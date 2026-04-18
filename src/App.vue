@@ -24,7 +24,7 @@ import { RouterLink, RouterView } from 'vue-router';
           <RouterLink to="/cv" class="nav-link">CV</RouterLink>
         </nav>
 
-        <div class="btn-header">
+        <div class="btn-header shadow-xs">
           <RouterLink to="/kontakt" class="text-xs">Kontakt mig</RouterLink>
         </div>
       </div>
@@ -38,7 +38,7 @@ import { RouterLink, RouterView } from 'vue-router';
       <div
         class="page-container py-6 font-accent text-center text-sm text-[var(--color-bg-white)]"
       >
-        &copy; 2024 Olga Pasko. Alle rettigheder forbeholdes.
+        &copy; 2026 Olga Pasko. Alle rettigheder forbeholdes.
       </div>
     </footer>
   </div>
