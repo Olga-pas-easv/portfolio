@@ -162,3 +162,9 @@ img {
   height: 1px;
   background-color: var(--color-text-light);
 }
+
+@media (width >= 40rem) {
+  .label-none {
+    display: none;
+  }
+}

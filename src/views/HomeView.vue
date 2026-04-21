@@ -1,60 +1,92 @@
 <script setup>
 import { primaryProjects } from '../data/projects.js';
+import heroPhoto from '@/assets/image/hero-photo.jpg';
 </script>
 
 <template>
-  <section class="page-container">
+  <!-- Hero-section -->
+
+  <section class="page-container md:w-full">
+    <!-- First row -->
     <div
-      class="flex justify-between py-8 mx-25 items-baseline border-b border-(--color-border)"
+      class="flex justify-between py-8 md:mx-25 items-baseline border-b border-(--color-border) h-full max-h-[1000px]"
     >
       <h1 class="font-accent text-6xl md:text-5xl">Olga Pasko</h1>
 
-      <p class="label-caps text-(--color-text-light)">
+      <p class="label-caps hidden sm:block text-(--color-text-light)">
         Multimediedesign · Danmark
       </p>
     </div>
 
-    <div class="grid grid-cols-2 gap-4 pt-15 pb-8 mx-25">
-      <div class="flex flex-col items-start justify-between max-h-fit">
+    <div
+      class="grid grid-cols-1 gap-4 pt-8 pb-8 min-[740px]:grid-cols-[minmax(0,1fr)_minmax(300px,420px)] min-[740px]:gap-10 min-[740px]:pt-12 min-[740px]:h-auto xl:h-auto min-[1000px]:grid-cols-2 min-[1000px]:h-auto min-[1000px]:mx-25"
+    >
+      <!-- Hero-text-left -->
+
+      <div class="min-w-0 flex flex-col justify-between">
         <div>
-          <p class="label-caps text-(--color-accent) pb-5">
-            Åben for praktikplads · 2026/2027
-          </p>
-          <h2
-            class="font-accent leading-[1.4] tracking-[-0.5px] text-5xl text-(--color-text) pb-5 md:text-5xl"
+          <div>
+            <p class="label-caps text-(--color-accent) pb-5">
+              Åben for praktikplads · 2026/2027
+            </p>
+            <h2
+              class="font-accent leading-[1.12] text-[48px] min-[740px]:text-[40px] min-[860px]:text-[48px] text-(--color-text) pb-5 md:leading-[1.4] tracking-[-0.5px]"
+            >
+              Hjemmesider og <br />
+              digitale grænseflader <br />
+              —
+              <span class="text-(--color-accent) italic">strukturerede</span
+              >,<br />
+              enkle og overskuelige.
+            </h2>
+            <p class="text-(--color-text-body) text-sm leading-6 pb-5">
+              Studerende i multimediedesign med fokus på webdesign, visuel
+              hierarki og HTML/CSS. Jeg sætter pris på at forstå opgaven
+              grundigt og arbejder systematisk fra de første skitser til den
+              færdige side.
+            </p>
+            <div class="gap-4 flex pb-7 min-[1200px]:pb-30">
+              <a href="" class="btn-primary">Se projekter</a>
+              <a href="" class="btn-secondary">Download CV</a>
+            </div>
+          </div>
+          <div
+            class="hidden max-[730px]:flex max-md:pb-5 min-[1200px]:flex gap-5 flex-wrap text-xs text-(--color-text-light) w-full pt-5 border-t border-(--color-border)"
           >
-            Hjemmesider og <br />
-            digitale grænseflader <br />
-            —
-            <span class="text-(--color-accent) italic">strukturerede</span
-            >,<br />
-            enkle og overskuelige.
-          </h2>
-          <p class="text-(--color-text-body) text-sm leading-6 pb-5">
-            Studerende i multimediedesign med fokus på webdesign, visuel
-            hierarki og HTML/CSS. Jeg sætter pris på at forstå opgaven grundigt
-            og arbejder systematisk fra de første skitser til den færdige side.
-          </p>
-          <div class="gap-4 flex pb-30">
-            <a href="" class="btn-primary">Se projekter</a>
-            <a href="" class="btn-secondary">Download CV</a>
+            <p>Webdesign</p>
+            <p>HTML / CSS</p>
+            <p>Vue / Tailwind</p>
+            <p>UI og UX</p>
+            <p>Visuel kommunikation</p>
+            <p>SEO</p>
           </div>
         </div>
-        <div
-          class="flex gap-7 flex-wrap text-xs text-(--color-text-light) justify-between w-full pt-5 border-t border-(--color-border)"
-        >
-          <p>Webdesign</p>
-          <p>HTML / CSS</p>
-          <p>UI og UX</p>
-          <p>Visuel kommunikation</p>
-          <p>SEO</p>
-        </div>
       </div>
-      <div class="flex flex-col items-end">
-        <div>
-          <img src="" alt="" />
+
+      <!-- Hero-img-right -->
+
+      <div class="flex justify-end">
+        <div class="relative w-full max-w-105">
+          <div class="overflow-hidden bg-(--color-bg-muted)">
+            <img
+              :src="heroPhoto"
+              alt="Olga Pasko"
+              class="block h-auto w-full object-cover"
+            />
+          </div>
+
+          <div
+            class="hidden min-[1200px]:block absolute bottom-6 right-[-20px] bg-(--color-bg-primary) px-6 py-3 text-sm text-(--color-text) shadow-sm border border-(--color-border)"
+            style="font-family: var(--font-display)"
+          >
+            Web · UI · Visuel kommunikation
+          </div>
+
+          <div
+            class="hidden min-[1200px]:block absolute -bottom-4 -left-4 h-22 w-22 border border-(--color-border)"
+            aria-hidden="true"
+          ></div>
         </div>
-        <p>Web · UI · Visuel kommunikation</p>
       </div>
     </div>
   </section>
@@ -97,7 +129,7 @@ import { primaryProjects } from '../data/projects.js';
         </div>
 
         <p
-          class="hidden text-xs uppercase tracking-[0.24em] text-(--color-text-light)] md:block"
+          class="hidden text-xs uppercase tracking-[0.24em] text-(--color-text-light) md:block"
         >
           Komplekse
         </p>
@@ -117,7 +149,7 @@ import { primaryProjects } from '../data/projects.js';
         >
           <div class="overflow-hidden bg-(--color-bg-muted)">
             <img
-              :src="project.coverImage || project.image"
+              :src="project.coverImage"
               :alt="project.title"
               class="h-full w-full object-cover"
             />
@@ -138,7 +170,7 @@ import { primaryProjects } from '../data/projects.js';
               </p>
 
               <p
-                class="hidden text-[10px] uppercase tracking-[0.18em] text-(--color-text-light)] md:block"
+                class="hidden text-[10px] uppercase tracking-[0.18em] text-(--color-text-light) md:block"
               >
                 {{ project.label }}
               </p>

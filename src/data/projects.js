@@ -1,3 +1,6 @@
+import brotherProject from '@/assets/image/brother-project.jpg';
+import greenProject from '@/assets/image/green-project.png';
+
 export const projects = [
   {
     id: 1,
@@ -12,7 +15,7 @@ export const projects = [
     tags: ['Webdesign', 'HTML/CSS', 'UI-design', 'SEO', 'SoMe'],
     shortDescription:
       'Gruppe — UI-design, visuel retning, front-end (HTML/CSS) og SEO',
-    coverImage: '/images/broedrene-loevehjerte-cover.jpg',
+    coverImage: brotherProject,
     link: 'https://www.figma.com/deck/zROTQil6pqyZft1vFliswk/Digital-design-case--Figma-?node-id=8-34&t=4tIHrguYosDesSLM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
     featured: true,
   },
@@ -29,7 +32,7 @@ export const projects = [
     tags: ['Konceptudvikling', 'Motion', 'Teamprojekt', 'Visuel retning'],
     shortDescription:
       'Gruppe — konceptudvikling, video og motion-produktion',
-    coverImage: '/images/green-street-cover.jpg',
+    coverImage: greenProject,
     link: '',
     featured: true,
   },

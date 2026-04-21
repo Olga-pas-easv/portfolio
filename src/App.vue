@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router';
 
 <template>
   <div class="min-h-screen w-full">
-    <header class="page-container">
+    <header class="page-container items-baseline">
       <div
         class="flex justify-between items-center h-full py-4 text-(--color-text)"
       >
@@ -12,14 +12,16 @@ import { RouterLink, RouterView } from 'vue-router';
           <RouterLink to="/" class="font-accent text-xl">
             Olga Pasko
           </RouterLink>
-          <p class="label-caps text-(--color-text-muted) font-normal">
+          <p
+            class="label-caps hidden md:block text-(--color-text-muted) font-normal"
+          >
             Multimediedesign
           </p>
         </div>
 
-        <nav class="flex gap-8 text-xs tracking-widest">
-          <RouterLink to="/" class="nav-link">Hjem</RouterLink>
-          <a href="#projekter" class="nav-link">Projekter</a>
+        <nav class="flex md:gap-8 text-xs tracking-widest gap-4">
+          <RouterLink to="/" class="nav-link hidden md:block">Hjem</RouterLink>
+          <a href="#projekter" class="nav-link hidden md:block">Projekter</a>
           <RouterLink to="/om-mig" class="nav-link">Om mig</RouterLink>
           <RouterLink to="/cv" class="nav-link">CV</RouterLink>
         </nav>
