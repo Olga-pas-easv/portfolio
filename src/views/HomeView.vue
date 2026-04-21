@@ -1,6 +1,67 @@
 <script setup>
-import { primaryProjects, otherProjects } from '../data/projects.js';
 import heroPhoto from '@/assets/image/hero-photo.jpg';
+import { computed, ref } from 'vue';
+import {
+  primaryProjects,
+  otherProjects,
+  visualGallery,
+} from '../data/projects.js';
+
+const visibleStartIndex = ref(0);
+const isLightboxOpen = ref(false);
+const activeImageIndex = ref(0);
+
+const visibleVisualImages = computed(() => {
+  if (!visualGallery?.images?.length) return [];
+
+  const images = visualGallery.images;
+  const result = [];
+
+  for (let i = 0; i < 3; i++) {
+    const index = (visibleStartIndex.value + i) % images.length;
+    result.push({
+      ...images[index],
+      originalIndex: index,
+    });
+  }
+
+  return result;
+});
+
+function showNextVisuals() {
+  if (!visualGallery?.images?.length) return;
+  visibleStartIndex.value =
+    (visibleStartIndex.value + 1) % visualGallery.images.length;
+}
+
+function showPrevVisuals() {
+  if (!visualGallery?.images?.length) return;
+  visibleStartIndex.value =
+    (visibleStartIndex.value - 1 + visualGallery.images.length) %
+    visualGallery.images.length;
+}
+
+function openLightbox(index) {
+  activeImageIndex.value = index;
+  isLightboxOpen.value = true;
+}
+
+function closeLightbox() {
+  isLightboxOpen.value = false;
+}
+
+function showNextLightboxImage() {
+  if (!visualGallery?.images?.length) return;
+  activeImageIndex.value =
+    (activeImageIndex.value + 1) % visualGallery.images.length;
+}
+
+function showPrevLightboxImage() {
+  if (!visualGallery?.images?.length) return;
+  activeImageIndex.value =
+    (activeImageIndex.value - 1 + visualGallery.images.length) %
+    visualGallery.images.length;
+}
 </script>
 
 <template>
@@ -146,7 +207,7 @@ import heroPhoto from '@/assets/image/hero-photo.jpg';
               : 'col-span-12 md:col-span-5'
           "
         >
-          <div class="h-100 overflow-hidden bg-(--color-bg-muted)">
+          <div class="h-84 overflow-hidden bg-(--color-bg-muted)">
             <img
               :src="project.coverImage"
               :alt="project.title"
@@ -163,7 +224,7 @@ import heroPhoto from '@/assets/image/hero-photo.jpg';
           "
         >
           <div class="max-w-xl">
-            <div class="flex justify-between gap-4 items-baseline pb-8">
+            <div class="flex justify-between gap-4 items-baseline pb-4">
               <p
                 class="uppercase font-accent font-normal text-3xl text-(--color-text-light)"
               >
@@ -181,7 +242,7 @@ import heroPhoto from '@/assets/image/hero-photo.jpg';
               {{ project.title }}
             </h4>
 
-            <p class="mt-4 text-sm leading-6 text-(--color-text-body) pb-5">
+            <p class="mt-4 text-sm leading-6 text-(--color-text-body) pb-4">
               {{ project.description }}
             </p>
 
@@ -221,6 +282,8 @@ import heroPhoto from '@/assets/image/hero-photo.jpg';
       </article>
     </div>
   </section>
+
+  <!-- Øvrige projekter -->
 
   <section class="w-full bg-(--color-bg-muted)">
     <div class="page-container py-20">
@@ -304,4 +367,110 @@ import heroPhoto from '@/assets/image/hero-photo.jpg';
       </div>
     </div>
   </section>
+
+  <!-- Visual Gallery -->
+
+  <section class="page-container py-20">
+    <div class="max-w-[640px]">
+      <p class="label-caps text-(--color-text-light)">Grafisk arbejde</p>
+
+      <div class="mt-2 flex items-baseline gap-4">
+        <p class="font-accent text-3xl text-(--color-text-light)">03</p>
+        <h3 class="font-accent text-5xl leading-none text-(--color-text)">
+          Visuelle projekter
+        </h3>
+      </div>
+
+      <p class="mt-12 max-w-[560px] text-sm leading-7 text-(--color-text-body)">
+        Projekter der viser spændvidde i kompetencer — grafisk identitet, lokalt
+        designarbejde og præsentationsdesign.
+      </p>
+
+      <p class="mt-4 text-[11px] text-(--color-text-light)">
+        Solo — grafisk design og konceptudvikling
+      </p>
+    </div>
+
+    <div class="mt-10 flex items-center justify-between gap-4">
+      <div class="hidden md:block"></div>
+
+      <div class="flex gap-3">
+        <button
+          type="button"
+          class="flex h-10 w-10 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
+          @click="showPrevVisuals"
+          aria-label="Forrige projekter"
+        >
+          ←
+        </button>
+
+        <button
+          type="button"
+          class="flex h-10 w-10 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
+          @click="showNextVisuals"
+          aria-label="Næste projekter"
+        >
+          →
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <button
+        v-for="image in visibleVisualImages"
+        :key="image.id"
+        type="button"
+        class="group overflow-hidden bg-(--color-bg-muted) text-left"
+        @click="openLightbox(image.originalIndex)"
+      >
+        <img
+          :src="image.src"
+          :alt="image.alt"
+          class="h-[560px] w-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
+        />
+      </button>
+    </div>
+  </section>
+
+  <!-- Fullscreen Lightbox -->
+
+  <div
+    v-if="isLightboxOpen"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4 py-6"
+  >
+    <button
+      type="button"
+      class="absolute right-4 top-4 flex h-11 w-11 items-center justify-center border border-white/30 text-2xl text-white transition-colors duration-200 hover:bg-white hover:text-black"
+      @click="closeLightbox"
+      aria-label="Luk"
+    >
+      ×
+    </button>
+
+    <button
+      type="button"
+      class="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/30 text-2xl text-white transition-colors duration-200 hover:bg-white hover:text-black"
+      @click="showPrevLightboxImage"
+      aria-label="Forrige billede"
+    >
+      ←
+    </button>
+
+    <div class="max-h-full w-full max-w-[1100px]">
+      <img
+        :src="visualGallery.images[activeImageIndex].src"
+        :alt="visualGallery.images[activeImageIndex].alt"
+        class="max-h-[88vh] w-full object-contain"
+      />
+    </div>
+
+    <button
+      type="button"
+      class="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-white/30 text-2xl text-white transition-colors duration-200 hover:bg-white hover:text-black"
+      @click="showNextLightboxImage"
+      aria-label="Næste billede"
+    >
+      →
+    </button>
+  </div>
 </template>

@@ -84,7 +84,7 @@ export const projects = [
     link: '',
     featured: false,
   },
-  {
+  { 
     id: 6,
     slug: 'visuelle-projekter',
     title: 'Visuelle projekter',
@@ -148,4 +148,4 @@ export const visualProjects = projects.filter(
 
 export const visualGallery = projects.find(
   (project) => project.type === 'gallery'
-)
+);
