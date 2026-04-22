@@ -1,6 +1,9 @@
 <script setup>
+import { computed, ref, nextTick } from 'vue';
 import heroPhoto from '@/assets/image/hero-photo.jpg';
-import { computed, ref } from 'vue';
+import fotoAbout from '@/assets/image/foto-about.jpg';
+import videoCv from '@/assets/video/video-cv.mp4';
+
 import {
   primaryProjects,
   otherProjects,
@@ -61,6 +64,20 @@ function showPrevLightboxImage() {
   activeImageIndex.value =
     (activeImageIndex.value - 1 + visualGallery.images.length) %
     visualGallery.images.length;
+}
+
+const isVideoModalOpen = ref(false);
+const videoPlayer = ref(null);
+
+async function openVideoModal() {
+  isVideoModalOpen.value = true;
+  await nextTick();
+  videoPlayer.value?.play?.();
+}
+
+function closeVideoModal() {
+  videoPlayer.value?.pause?.();
+  isVideoModalOpen.value = false;
 }
 </script>
 
@@ -473,4 +490,234 @@ function showPrevLightboxImage() {
       →
     </button>
   </div>
+
+  <!-- Sådan arbejder jeg - block -->
+
+  <section class="page-container py-20 md:py-24">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
+      <div class="md:col-span-4">
+        <p class="font-accent text-3xl text-(--color-text-light)">04</p>
+        <p class="label-caps mt-2 text-(--color-text-light)">TILGANG</p>
+
+        <h3 class="font-accent mt-3 text-5xl leading-none text-(--color-text)">
+          Sådan arbejder jeg
+        </h3>
+
+        <p
+          class="mt-6 max-w-[260px] text-sm leading-7 text-(--color-text-body)"
+        >
+          Min tilgang er forankret i forståelse for konteksten og brugernes
+          behov — ikke i personlig præference eller æstetik alene.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 md:col-span-8 md:grid-cols-3 md:gap-0">
+        <article class="md:pr-6">
+          <p class="font-accent text-2xl text-(--color-text-light)">01</p>
+
+          <h4
+            class="font-accent mt-3 text-3xl leading-tight text-(--color-text)"
+          >
+            Forstå konteksten først
+          </h4>
+
+          <p class="mt-4 text-sm leading-7 text-(--color-text-body)">
+            Jeg starter med at undersøge brugerne og deres behov. Design uden
+            forankring i virkeligheden er gætværk.
+          </p>
+        </article>
+
+        <article class="md:border-l md:border-(--color-border) md:px-6">
+          <p class="font-accent text-2xl text-(--color-text-light)">02</p>
+
+          <h4
+            class="font-accent mt-3 text-3xl leading-tight text-(--color-text)"
+          >
+            Enkelhed er ikke det nemmeste
+          </h4>
+
+          <p class="mt-4 text-sm leading-7 text-(--color-text-body)">
+            Godt design er det, der virker uden forklaring. Hvert element skal
+            tjene et formål — ikke dekorere.
+          </p>
+        </article>
+
+        <article class="md:border-l md:border-(--color-border) md:px-6">
+          <p class="font-accent text-2xl text-(--color-text-light)">03</p>
+
+          <h4
+            class="font-accent mt-3 text-3xl leading-tight text-(--color-text)"
+          >
+            Iterér tidligt, ikke sent
+          </h4>
+
+          <p class="mt-4 text-sm leading-7 text-(--color-text-body)">
+            Tidlig feedback på wireframes er mere værdifuld end sen kritik af et
+            færdigt design. Jeg tester og justerer løbende.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full bg-(--color-text)">
+    <div class="page-container py-16 md:py-20">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
+        <!-- Image -->
+        <div class="md:col-span-5">
+          <div class="overflow-hidden bg-black/20">
+            <img
+              :src="fotoAbout"
+              alt="Tree near a river"
+              class="h-[420px] w-full object-cover md:h-[520px]"
+            />
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="flex items-center md:col-span-7">
+          <div class="max-w-[520px]">
+            <div class="flex items-baseline gap-4">
+              <p class="font-accent text-3xl text-white/30">05</p>
+              <p class="label-caps text-white/50">OM MIG</p>
+            </div>
+
+            <h3
+              class="font-accent mt-4 text-4xl leading-[1.15] text-(--color-bg-white) md:text-5xl"
+            >
+              Studerende i webdesign <br />
+              <span class="italic text-(--color-accent)">og front end</span>
+            </h3>
+
+            <p class="mt-6 text-sm leading-7 text-white/65 md:text-base">
+              Jeg studerer multimediedesign og arbejder til daglig med
+              webdesign, layout og visuel kommunikation. Jeg er optaget af at
+              gøre digitale grænseflader enkle og overskuelige for brugeren.
+            </p>
+
+            <p class="mt-5 text-sm leading-7 text-white/65 md:text-base">
+              Inden studiet arbejdede jeg med digital kommunikation og
+              koordinering — det har givet mig forståelse for, hvem man designer
+              for, og hvad en opgave egentlig handler om.
+            </p>
+
+            <div
+              class="text-white/85 duration-200 hover:text-(--color-accent) mt-8"
+            >
+              <RouterLink
+                to="/om-mig"
+                class="inline-flex items-center gap-2 border-b border-white/25 pb-1 text-sm"
+              >
+                Læs mere om mig
+                <span>→</span>
+              </RouterLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-container py-16 md:py-20">
+    <p class="label-caps text-(--color-text-light)">CV og profil</p>
+
+    <h3
+      class="font-accent mt-3 text-4xl leading-tight text-(--color-text) md:text-5xl"
+    >
+      Download CV, video-intro eller find mig på LinkedIn.
+    </h3>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
+      <!-- PDF -->
+      <a
+        href="/files/olga-pasko-cv.pdf"
+        download
+        class="flex items-center gap-4 border border-(--color-border) bg-(--color-bg-white) px-5 py-5 transition-colors duration-200 hover:bg-(--color-bg-muted)"
+      >
+        <div
+          class="flex h-10 w-10 items-center justify-center border border-(--color-border) text-(--color-text-light)"
+        >
+          ↓
+        </div>
+
+        <div>
+          <p class="text-sm text-(--color-text)">CV som PDF</p>
+          <p class="mt-1 text-[11px] text-(--color-text-light)">
+            Opdateret 2026
+          </p>
+        </div>
+      </a>
+
+      <!-- Video -->
+      <button
+        type="button"
+        @click="openVideoModal"
+        class="flex items-center gap-4 border border-(--color-border) bg-(--color-bg-white) px-5 py-5 text-left transition-colors duration-200 hover:bg-(--color-bg-muted)"
+      >
+        <div
+          class="flex h-10 w-10 items-center justify-center border border-(--color-border) text-(--color-text-light)"
+        >
+          ▶
+        </div>
+
+        <div>
+          <p class="text-sm text-(--color-text)">Video CV</p>
+          <p class="mt-1 text-[11px] text-(--color-text-light)">
+            2 minutters præsentation
+          </p>
+        </div>
+      </button>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/olga-v-pasko/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-4 border border-(--color-border) bg-(--color-bg-white) px-5 py-5 transition-colors duration-200 hover:bg-(--color-bg-muted)"
+      >
+        <div
+          class="flex h-10 w-10 items-center justify-center border border-(--color-border) text-(--color-text-light)"
+        >
+          in
+        </div>
+
+        <div>
+          <p class="text-sm text-(--color-text)">LinkedIn</p>
+          <p class="mt-1 text-[11px] text-(--color-text-light)">
+            Profil og netværk
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="page-container pb-20 md:pb-24">
+    <div class="border border-(--color-border) px-6 py-10 md:px-10 md:py-12">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
+        <div class="md:col-span-8">
+          <p class="label-caps text-(--color-text-light)">Kontakt</p>
+
+          <h3
+            class="font-accent mt-3 text-4xl leading-tight text-(--color-text) md:text-5xl"
+          >
+            Søger du en <br />
+            multimediedesign-praktikant?
+          </h3>
+
+          <p
+            class="mt-5 max-w-[420px] text-sm leading-7 text-(--color-text-body)"
+          >
+            Jeg søger praktikplads og er åben for relevante stillinger inden for
+            webdesign, frontend og visuel kommunikation i Danmark.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 md:flex md:justify-end">
+          <RouterLink to="/om-mig" class="btn-primary">
+            Kontakt mig
+            <span class="ml-2">→</span>
+          </RouterLink>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
