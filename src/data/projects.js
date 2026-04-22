@@ -64,7 +64,7 @@ export const projects = [
       'Et designprojekt med udgangspunkt i Ribes kulturarv og turisme. Opgaven var at skabe en digital tilstedeværelse med respekt for historisk æstetik.',
     tags: [],
     shortDescription: 'Gruppe — research, design og præsentation',
-    coverImage: '/images/ribe-mini-case-cover.jpg',
+    coverImage: '/images/ribe-cover.jpg',
     link: '',
     featured: false,
   },
@@ -96,7 +96,7 @@ export const projects = [
       'En samling af visuelle arbejder, som vises som galleri med pilenavigation og fullscreen-visning uden separat underside.',
     tags: ['Poster Design', 'Visual Design', 'Layout'],
     shortDescription: 'Visuelle arbejder — galleri med fullscreen-visning',
-    coverImage: '/images/visual/visuelle-projekter-cover.jpg',
+    coverImage: '/images/visuelle-projekter-cover.jpg',
     link: '',
     featured: false,
     images: [

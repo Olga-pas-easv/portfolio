@@ -27,7 +27,7 @@ import { RouterLink, RouterView } from 'vue-router';
         </nav>
 
         <div class="btn-header">
-          <RouterLink to="/kontakt" class="text-xs">Kontakt mig</RouterLink>
+          <RouterLink to="/kontakt" class="text-xs">Kontakt mig →</RouterLink>
         </div>
       </div>
     </header>
