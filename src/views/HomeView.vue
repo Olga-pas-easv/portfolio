@@ -122,8 +122,10 @@ function closeVideoModal() {
             og arbejder systematisk fra de første skitser til den færdige side.
           </p>
           <div class="gap-4 flex pb-7 min-[1200px]:pb-30">
-            <a href="" class="btn-primary">Se projekter</a>
-            <a href="" class="btn-secondary">Download CV</a>
+            <a href="#projekter" class="btn-primary">Se projekter</a>
+            <a href="/files/olga-pasko-cv.pdf" download class="btn-secondary"
+              >Download CV ↓
+            </a>
           </div>
         </div>
         <div
@@ -707,7 +709,7 @@ function closeVideoModal() {
             class="mt-5 max-w-[420px] text-sm leading-7 text-(--color-text-body)"
           >
             Jeg søger praktikplads og er åben for relevante stillinger inden for
-            webdesign, frontend og visuel kommunikation i Danmark.
+            webdesign, front og visuel kommunikation i Danmark.
           </p>
         </div>
 
