@@ -1,8 +1,7 @@
 <script setup>
-import { computed, ref, nextTick } from 'vue';
+import { computed, ref } from 'vue';
 import heroPhoto from '@/assets/image/hero-photo.jpg';
 import fotoAbout from '@/assets/image/foto-about.jpg';
-import videoCv from '@/assets/video/video-cv.mp4';
 
 import {
   primaryProjects,
@@ -67,16 +66,15 @@ function showPrevLightboxImage() {
 }
 
 const isVideoModalOpen = ref(false);
-const videoPlayer = ref(null);
 
-async function openVideoModal() {
+const youtubeEmbedUrl =
+  'https://www.youtube.com/embed/oa7Ujv6gR4M?autoplay=1&rel=0';
+
+function openVideoModal() {
   isVideoModalOpen.value = true;
-  await nextTick();
-  videoPlayer.value?.play?.();
 }
 
 function closeVideoModal() {
-  videoPlayer.value?.pause?.();
   isVideoModalOpen.value = false;
 }
 </script>
@@ -619,6 +617,7 @@ function closeVideoModal() {
       </div>
     </div>
   </section>
+
   <section class="page-container py-16 md:py-20">
     <p class="label-caps text-(--color-text-light)">CV og profil</p>
 
@@ -664,7 +663,7 @@ function closeVideoModal() {
         <div>
           <p class="text-sm text-(--color-text)">Video CV</p>
           <p class="mt-1 text-[11px] text-(--color-text-light)">
-            2 minutters præsentation
+            1 minutters præsentation
           </p>
         </div>
       </button>
@@ -691,6 +690,46 @@ function closeVideoModal() {
       </a>
     </div>
   </section>
+
+  <div
+    v-if="isVideoModalOpen"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+    @click.self="closeVideoModal"
+  >
+    <div
+      class="relative w-[92vw] max-w-[420px] bg-black p-3 sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1100px]"
+    >
+      <button
+        type="button"
+        @click="closeVideoModal"
+        class="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center border border-white/20 text-2xl text-white transition-colors duration-200 hover:bg-white hover:text-black"
+        aria-label="Luk video"
+      >
+        ×
+      </button>
+
+      <div
+        class="relative mx-auto aspect-[16/9] max-h-[80vh] w-full overflow-hidden"
+      >
+        <iframe
+          class="absolute inset-0 h-full w-full"
+          :src="youtubeEmbedUrl"
+          title="Video CV"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
 
   <section class="page-container pb-20 md:pb-24">
     <div class="border border-(--color-border) px-6 py-10 md:px-10 md:py-12">
