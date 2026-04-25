@@ -21,7 +21,9 @@ import { RouterLink, RouterView } from 'vue-router';
 
         <nav class="flex md:gap-8 text-xs tracking-widest gap-4">
           <RouterLink to="/" class="nav-link hidden md:block">Hjem</RouterLink>
-          <RouterLink to="/#projekter" class="nav-link">Projekter</RouterLink>
+
+          <a href="/#projekter" class="tnav-link"> Projekter </a>
+
           <!-- <RouterLink to="/om-mig" class="nav-link">Om mig</RouterLink> -->
           <a
             href="/files/cv-olga-pasko.pdf"
