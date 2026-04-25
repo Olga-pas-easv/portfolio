@@ -378,7 +378,7 @@ function closeVideoModal() {
                   v-else
                   class="text-[11px] uppercase tracking-[0.14em] text-(--color-accent)"
                 >
-                  Se case →
+                  Case kommer snart
                 </span>
               </div>
             </div>

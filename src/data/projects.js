@@ -16,7 +16,7 @@ export const projects = [
     shortDescription:
       'Gruppe — UI-design, visuel retning, front-end (HTML/CSS) og SEO',
     coverImage: brotherProject,
-    link: 'https://www.figma.com/deck/zROTQil6pqyZft1vFliswk/Digital-design-case--Figma-?node-id=8-34&t=4tIHrguYosDesSLM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
+    link: 'https://www.figma.com/deck/zROTQil6pqyZft1vFliswk/Digital-design-case--Figma-?node-id=2-32&t=kcDDuyxq868CJxrh-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
     featured: true,
   },
   {
@@ -33,7 +33,7 @@ export const projects = [
     shortDescription:
       'Gruppe — konceptudvikling, video og motion-produktion',
     coverImage: greenProject,
-    link: '',
+    link: 'https://www.figma.com/deck/PDpGH88qefUfdUzGPKHcUN/Untitled?node-id=1-42&p=f&t=T7UBNhHkgQ9ueUS6-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
     featured: true,
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     tags: ['UX', 'UI', 'Figma'],
     shortDescription: 'Solo — UX/UI-design, visuel retning',
     coverImage: '/images/cook.jpg',
-    link: '',
+    link: 'https://indd.adobe.com/view/e8ffc16c-40a9-4d5d-a99f-dc6f729d3e19',
     featured: true,
   },
   {
@@ -65,7 +65,7 @@ export const projects = [
     tags: [],
     shortDescription: 'Gruppe — research, design og præsentation',
     coverImage: '/images/ribe-cover.jpg',
-    link: '',
+    link: 'https://indd.adobe.com/view/8c5dc04c-c4e6-4cba-af2c-68624746591b',
     featured: false,
   },
   {
@@ -75,9 +75,9 @@ export const projects = [
     category: 'other',
     type: 'case',
     year: '2026',
-    label: 'Grafisk identitet og digitalt layout',
+    label: 'Redesign og digitalt layout',
     description:
-      'Visuel identitet og digitale materialer til en servicevirksomhed. Fokus på overskuelig kommunikation og konsistent grafisk udtryk.',
+      'Et redesignprojekt for ART-Service. Fokus på at skabe et moderne og brugervenligt design, der formidler virksomhedens kreative tilgang.',
     tags: [],
     shortDescription: 'Solo — research, design og præsentation',
     coverImage: '/images/art.jpg',
