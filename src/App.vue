@@ -22,7 +22,7 @@ import { RouterLink, RouterView } from 'vue-router';
         <nav class="flex md:gap-8 text-xs tracking-widest gap-4">
           <RouterLink to="/" class="nav-link hidden md:block">Hjem</RouterLink>
           <a href="#projekter" class="nav-link hidden md:block">Projekter</a>
-          <RouterLink to="/om-mig" class="nav-link">Om mig</RouterLink>
+          <!-- <RouterLink to="/om-mig" class="nav-link">Om mig</RouterLink> -->
           <a
             href="/files/cv-olga-pasko.pdf"
             target="_blank"
@@ -77,12 +77,12 @@ import { RouterLink, RouterView } from 'vue-router';
               >
                 Projekter
               </a>
-              <RouterLink
+              <!-- <RouterLink
                 to="/om-mig"
                 class="transition-colors duration-200 hover:text-white"
               >
                 Om mig
-              </RouterLink>
+              </RouterLink> -->
               <a
                 href="/files/cv-olga-pasko.pdf"
                 target="_blank"

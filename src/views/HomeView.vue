@@ -577,7 +577,7 @@ function closeVideoModal() {
         <!-- Text -->
         <div class="flex items-center md:col-span-7">
           <div class="max-w-[520px]">
-            <div class="flex items-baseline gap-4">
+            <div class="flex items-baseline gap-12">
               <p class="font-accent text-3xl text-white/30">05</p>
               <p class="label-caps text-white/50">OM MIG</p>
             </div>
@@ -601,7 +601,7 @@ function closeVideoModal() {
               for, og hvad en opgave egentlig handler om.
             </p>
 
-            <div
+            <!-- <div
               class="text-white/85 duration-200 hover:text-(--color-accent) mt-8"
             >
               <RouterLink
@@ -611,7 +611,7 @@ function closeVideoModal() {
                 Læs mere om mig
                 <span>→</span>
               </RouterLink>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
