@@ -88,7 +88,7 @@
                 </svg>
               </span>
 
-              <span class="text-lg">olga@gmail.com</span>
+              <span class="text-lg">olga.v.pasko@gmail.com</span>
             </a>
 
             <!-- Phone -->
@@ -112,7 +112,7 @@
                 </svg>
               </span>
 
-              <span class="text-lg">+45 50 50 50 50</span>
+              <span class="text-lg">+45 50 37 52 02</span>
             </a>
 
             <!-- Location -->
@@ -171,7 +171,7 @@
               </div>
 
               <span class="text-sm text-(--color-text-light)">
-                linkedin.com/in/olga-v-pasko
+                linkedin.com/olga-v-pasko
               </span>
             </a>
 
@@ -201,14 +201,17 @@
               </div>
 
               <span class="text-sm text-(--color-text-light)">
-                olgapasko.myportfolio.com
+                olga-pasko.dk
               </span>
             </a>
 
             <!-- Video CV -->
-            <button
-              type="button"
-              class="flex items-center justify-between gap-4 text-left text-(--color-text-body) transition-colors duration-200 hover:text-(--color-text)"
+
+            <a
+              href="https://youtu.be/ALEUhwyjcZA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-between gap-4 text-(--color-text-body) transition-colors duration-200 hover:text-(--color-text)"
             >
               <div class="flex items-center gap-4">
                 <span
@@ -229,9 +232,9 @@
               </div>
 
               <span class="text-sm text-(--color-text-light)">
-                youtube.com/watch?v=ALEUhwyjcZA
+                youtu.be/Olga-cv
               </span>
-            </button>
+            </a>
 
             <!-- CV som PDF -->
             <a

@@ -168,7 +168,10 @@ function closeVideoModal() {
 
   <!-- Projekter Section -->
 
-  <section id="projekter" class="page-container py-16 md:py-24">
+  <section
+    id="projekter"
+    class="page-container overflow-x-hidden py-16 md:py-24"
+  >
     <div class="max-w-3xl">
       <p class="label-caps text-(--color-text-light)">Portefølje</p>
 
@@ -215,16 +218,16 @@ function closeVideoModal() {
       <article
         v-for="(project, index) in primaryProjects"
         :key="project.id"
-        class="grid grid-cols-12 items-start gap-15 border-b border-(--color-border) py-12 md:py-15"
+        class="grid grid-cols-1 items-start gap-6 border-b border-(--color-border) py-12 md:grid-cols-12 md:gap-15 md:py-15"
       >
         <div
           :class="
             index % 2 === 1
-              ? 'col-span-12 md:col-span-5 md:order-2'
-              : 'col-span-12 md:col-span-5'
+              ? 'min-w-0 md:col-span-5 md:order-2'
+              : 'min-w-0 md:col-span-5'
           "
         >
-          <div class="h-84 overflow-hidden bg-(--color-bg-muted)">
+          <div class="h-84 w-full overflow-hidden bg-(--color-bg-muted)">
             <img
               :src="project.coverImage"
               :alt="project.title"
@@ -236,11 +239,11 @@ function closeVideoModal() {
         <div
           :class="
             index % 2 === 1
-              ? 'col-span-12 md:col-span-7 md:order-1'
-              : 'col-span-12 md:col-span-7'
+              ? 'min-w-0 md:col-span-7 md:order-1'
+              : 'min-w-0 md:col-span-7'
           "
         >
-          <div class="max-w-xl">
+          <div class="min-w-0 max-w-xl">
             <div class="flex justify-between gap-4 items-baseline pb-4">
               <p
                 class="uppercase font-accent font-normal text-3xl text-(--color-text-light)"
@@ -493,7 +496,7 @@ function closeVideoModal() {
 
   <!-- Sådan arbejder jeg - block -->
 
-  <section class="page-container py-20 md:py-24">
+  <section class="page-container pb-20 md:pb-24 pt-12 md:pt-18">
     <div class="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
       <div class="md:col-span-4">
         <p class="font-accent text-3xl text-(--color-text-light)">04</p>
@@ -577,7 +580,7 @@ function closeVideoModal() {
         <!-- Text -->
         <div class="flex items-center md:col-span-7">
           <div class="max-w-[520px]">
-            <div class="flex items-baseline gap-12">
+            <div class="flex items-baseline gap-4">
               <p class="font-accent text-3xl text-white/30">05</p>
               <p class="label-caps text-white/50">OM MIG</p>
             </div>
@@ -753,7 +756,7 @@ function closeVideoModal() {
         </div>
 
         <div class="md:col-span-4 md:flex md:justify-end">
-          <RouterLink to="/om-mig" class="btn-primary">
+          <RouterLink to="/kontakt" class="btn-primary">
             Kontakt mig
             <span class="ml-2">→</span>
           </RouterLink>

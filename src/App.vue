@@ -21,13 +21,13 @@ import { RouterLink, RouterView } from 'vue-router';
 
         <nav class="flex md:gap-8 text-xs tracking-widest gap-4">
           <RouterLink to="/" class="nav-link hidden md:block">Hjem</RouterLink>
-          <a href="#projekter" class="nav-link hidden md:block">Projekter</a>
+          <RouterLink to="/#projekter" class="nav-link">Projekter</RouterLink>
           <!-- <RouterLink to="/om-mig" class="nav-link">Om mig</RouterLink> -->
           <a
             href="/files/cv-olga-pasko.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="nav-link"
+            class="nav-link hidden md:block"
           >
             CV
           </a>
