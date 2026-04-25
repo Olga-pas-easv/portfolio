@@ -436,35 +436,37 @@ function closeVideoModal() {
     </div>
 
     <!-- Mobile gallery -->
-    <div class="mt-8 flex items-center gap-3 md:hidden">
-      <button
-        type="button"
-        class="flex h-10 w-10 shrink-0 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
-        @click="showPrevVisuals"
-        aria-label="Forrige projekter"
-      >
-        ←
-      </button>
+    <div class="mt-8 md:hidden">
+      <div class="mb-4 flex items-center justify-between">
+        <button
+          type="button"
+          class="flex h-10 w-10 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
+          @click="showPrevVisuals"
+          aria-label="Forrige projekter"
+        >
+          ←
+        </button>
+
+        <button
+          type="button"
+          class="flex h-10 w-10 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
+          @click="showNextVisuals"
+          aria-label="Næste projekter"
+        >
+          →
+        </button>
+      </div>
 
       <button
         type="button"
-        class="group min-w-0 flex-1 overflow-hidden bg-(--color-bg-muted) text-left"
+        class="group block w-full overflow-hidden bg-(--color-bg-muted) text-left"
         @click="openLightbox(visibleVisualImages[0].originalIndex)"
       >
         <img
           :src="visibleVisualImages[0].src"
           :alt="visibleVisualImages[0].alt"
-          class="h-[420px] w-full object-cover object-center"
+          class="h-[420px] w-full object-contain object-center"
         />
-      </button>
-
-      <button
-        type="button"
-        class="flex h-10 w-10 shrink-0 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
-        @click="showNextVisuals"
-        aria-label="Næste projekter"
-      >
-        →
       </button>
     </div>
 
