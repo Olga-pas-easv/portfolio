@@ -411,7 +411,7 @@ function closeVideoModal() {
       </p>
     </div>
 
-    <div class="mt-10 flex items-center justify-between gap-4">
+    <div class="mt-10 hidden items-center justify-between gap-4 md:flex">
       <div class="hidden md:block"></div>
 
       <div class="flex gap-3">
@@ -435,7 +435,41 @@ function closeVideoModal() {
       </div>
     </div>
 
-    <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+    <!-- Mobile gallery -->
+    <div class="mt-8 flex items-center gap-3 md:hidden">
+      <button
+        type="button"
+        class="flex h-10 w-10 shrink-0 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
+        @click="showPrevVisuals"
+        aria-label="Forrige projekter"
+      >
+        ←
+      </button>
+
+      <button
+        type="button"
+        class="group min-w-0 flex-1 overflow-hidden bg-(--color-bg-muted) text-left"
+        @click="openLightbox(visibleVisualImages[0].originalIndex)"
+      >
+        <img
+          :src="visibleVisualImages[0].src"
+          :alt="visibleVisualImages[0].alt"
+          class="h-[420px] w-full object-cover object-center"
+        />
+      </button>
+
+      <button
+        type="button"
+        class="flex h-10 w-10 shrink-0 items-center justify-center border border-(--color-border) text-(--color-text) transition-colors duration-200 hover:bg-(--color-text) hover:text-(--color-bg-white)"
+        @click="showNextVisuals"
+        aria-label="Næste projekter"
+      >
+        →
+      </button>
+    </div>
+
+    <!-- Desktop gallery -->
+    <div class="mt-8 hidden gap-4 md:grid md:grid-cols-3">
       <button
         v-for="image in visibleVisualImages"
         :key="image.id"
