@@ -23,7 +23,14 @@ import { RouterLink, RouterView } from 'vue-router';
           <RouterLink to="/" class="nav-link hidden md:block">Hjem</RouterLink>
           <a href="#projekter" class="nav-link hidden md:block">Projekter</a>
           <RouterLink to="/om-mig" class="nav-link">Om mig</RouterLink>
-          <RouterLink to="/cv" class="nav-link">CV</RouterLink>
+          <a
+            href="/files/cv-olga-pasko.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-link"
+          >
+            CV
+          </a>
         </nav>
 
         <div class="btn-header">
@@ -76,12 +83,14 @@ import { RouterLink, RouterView } from 'vue-router';
               >
                 Om mig
               </RouterLink>
-              <RouterLink
-                to="/cv"
+              <a
+                href="/files/cv-olga-pasko.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="transition-colors duration-200 hover:text-white"
               >
                 CV
-              </RouterLink>
+              </a>
             </nav>
           </div>
 

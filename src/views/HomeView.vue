@@ -68,7 +68,7 @@ function showPrevLightboxImage() {
 const isVideoModalOpen = ref(false);
 
 const youtubeEmbedUrl =
-  'https://www.youtube.com/embed/oa7Ujv6gR4M?autoplay=1&rel=0';
+  'https://www.youtube.com/embed/ALEUhwyjcZA?autoplay=1&rel=0';
 
 function openVideoModal() {
   isVideoModalOpen.value = true;
@@ -121,7 +121,7 @@ function closeVideoModal() {
           </p>
           <div class="gap-4 flex pb-7 min-[1200px]:pb-30">
             <a href="#projekter" class="btn-primary">Se projekter</a>
-            <a href="/files/olga-pasko-cv.pdf" download class="btn-secondary"
+            <a href="/files/cv-olga-pasko.pdf" download class="btn-secondary"
               >Download CV ↓
             </a>
           </div>
@@ -630,7 +630,7 @@ function closeVideoModal() {
     <div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
       <!-- PDF -->
       <a
-        href="/files/olga-pasko-cv.pdf"
+        href="/files/cv-olga-pasko.pdf"
         download
         class="flex items-center gap-4 border border-(--color-border) bg-(--color-bg-white) px-5 py-5 transition-colors duration-200 hover:bg-(--color-bg-muted)"
       >
